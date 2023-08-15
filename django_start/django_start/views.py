@@ -14,3 +14,6 @@ def product_detail(request, product_id):
 def order_list(request):
     orders = Order.objects.all()
     return render(request, 'django_start/order_list.html', {'orders': orders})
+
+def start_page(request):
+    return render(request, 'django_start/start_page.html')
