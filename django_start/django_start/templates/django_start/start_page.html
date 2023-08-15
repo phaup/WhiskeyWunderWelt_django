@@ -1,11 +1,16 @@
 {% extends 'django_start/base.html' %}
 
 {% block content %}
-<h1>Welcome to Whiskey Wunder Welt!</h1>
-<p>Check out our current offers:</p>
+<h1>Willkommen bei Whiskey Wunder Welt</h1>
+<p>Entdecken Sie unsere aktuellen Angebote:</p>
 <ul>
     {% for product in products %}
-        <li><a href="{% url 'product_detail' product.id %}">{{ product.name }}</a></li>
-    {% endfor %}
+    <li>
+        <a href="{% url 'product_detail' product.id %}">
+            <img src="{{ product.image.url }}" alt="{{ product.name }}" width="100">
+            {{ product.name }}
+        </a>
+    </li>
 </ul>
+{% endfor %}
 {% endblock %}
