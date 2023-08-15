@@ -1,13 +1,62 @@
+{% load static %} <!-- Füge diese Zeile am Anfang der Datei hinzu -->
+
 <!DOCTYPE html>
 <html lang="de">
 <head>
     <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>{% block title %}WhiskeyWunderWelt{% endblock %}</title>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/foundation-sites@6.6.3/dist/css/foundation.min.css">
+    <!-- Dein eigenes CSS hier einbinden, falls benötigt -->
+    <style>
+
+        /* Stil für die Top-Bar */
+        .top-bar {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            background-color: #002251;
+            color: #68d3bd;
+            padding: 10px 20px;
+        }
+
+        .top-bar .logo {
+            max-width: 200px;
+            height: auto;
+        }
+
+        /* Stil für den Footer */
+        footer {
+            background-color: #002251;
+            padding: 20px;
+            text-align: center;
+        }
+        
+        /* Stil für Datenschutzerklärung und Impressum Links */
+        .footer-links {
+            margin-top: 10px;
+        }
+
+        .footer-links a {
+            color: #68d3bd;
+            margin: 0 10px;
+            text-decoration: none;
+        }
+    </style>
 </head>
 <body>
-    <nav>
-        <a href="{% url 'product_list' %}">Product List</a>
-        <a href="{% url 'order_list' %}">Order List</a>
+    <nav class="top-bar">
+        <div class="top-bar-left">
+            <ul class="menu">
+                <li><a href="{% url 'product_list' %}">Product List</a></li>
+                <li><a href="{% url 'order_list' %}">Order List</a></li>
+            </ul>
+        </div>
+        <div class="top-bar-right">
+            <a href="{% url 'start_page' %}">
+                <img src="{% static 'logo.png' %}" alt="Whiskey Wunder Welt Logo" class="logo">
+            </a>           
+        </div>
     </nav>
     <div class="content">
         {% block content %}
@@ -15,6 +64,16 @@
     </div>
     <footer>
         &copy; 2023 Whiskey Wunder Welt
+        <div class="footer-links">
+            <a href="#">Datenschutzerklärung</a>
+            <a href="#">Impressum</a>
+        </div>
     </footer>
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/foundation-sites@6.6.3/dist/js/foundation.min.js"></script>
+    <!-- Deine eigenen JavaScript-Dateien oder -Skripte hier einbinden, falls benötigt -->
+    <script>
+        $(document).foundation(); // Initialisiere die Foundation-Komponenten
+    </script>
 </body>
 </html>

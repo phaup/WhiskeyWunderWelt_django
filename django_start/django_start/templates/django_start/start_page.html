@@ -1,0 +1,11 @@
+{% extends 'django_start/base.html' %}
+
+{% block content %}
+<h1>Welcome to Whiskey Wunder Welt!</h1>
+<p>Check out our current offers:</p>
+<ul>
+    {% for product in products %}
+        <li><a href="{% url 'product_detail' product.id %}">{{ product.name }}</a></li>
+    {% endfor %}
+</ul>
+{% endblock %}
