@@ -1,0 +1,10 @@
+{% extends 'django_start/base.html' %}
+
+{% block content %}
+<h1>Order List</h1>
+<ul>
+    {% for order in orders %}
+        <li>{{ order.customer }} - Total Amount: {{ order.total_amount }}</li>
+    {% endfor %}
+</ul>
+{% endblock %}

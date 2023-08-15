@@ -1,0 +1,8 @@
+{% extends 'django_start/base.html' %}
+
+{% block content %}
+<h1>Product Detail: {{ product.name }}</h1>
+<p>Category: {{ product.category }}</p>
+<p>Price: {{ product.price }}</p>
+<p>Description: {{ product.description }}</p>
+{% endblock %}

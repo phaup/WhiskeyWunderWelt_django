@@ -1,0 +1,20 @@
+<!DOCTYPE html>
+<html lang="de">
+<head>
+    <meta charset="UTF-8">
+    <title>{% block title %}WhiskeyWunderWelt{% endblock %}</title>
+</head>
+<body>
+    <nav>
+        <a href="{% url 'product_list' %}">Product List</a>
+        <a href="{% url 'order_list' %}">Order List</a>
+    </nav>
+    <div class="content">
+        {% block content %}
+        {% endblock %}
+    </div>
+    <footer>
+        &copy; 2023 Whiskey Wunder Welt
+    </footer>
+</body>
+</html>
