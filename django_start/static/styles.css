@@ -1,0 +1,35 @@
+/* Stil für den Footer */
+footer {
+    background-color: #002251;
+    padding: 20px;
+    display: flex; /* Anwendung von Flexbox */
+    justify-content: space-between; /* Elemente nebeneinander anordnen */
+    flex-wrap: wrap; /* Bei Bedarf umbruchfähig machen */
+    text-align: center;
+}
+
+/* Stil für die einzelnen Abschnitte im Footer */
+.footer-section {
+    flex: 1; /* Gleichmäßige Verteilung des verfügbaren Platzes */
+    margin-right: 20px; /* Abstand zwischen den Abschnitten */
+}
+
+.footer-section h3 {
+    margin-bottom: 10px;
+    color: #68d3bd;
+}
+
+/* Stil für die Links im Footer */
+.footer-section ul {
+    list-style: none;
+    padding: 0;
+}
+
+.footer-section ul li {
+    margin-bottom: 5px;
+}
+
+.footer-section a {
+    color: #68d3bd;
+    text-decoration: none;
+}

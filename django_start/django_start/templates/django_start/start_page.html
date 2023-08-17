@@ -7,10 +7,14 @@
     {% for product in products %}
     <li>
         <a href="{% url 'product_detail' product.id %}">
-            <img src="{{ product.image.url }}" alt="{{ product.name }}" width="100">
+            {% if product.image %}
+                <img src="{{ product.image.url }}" alt="{{ product.name }}" width="100">
+            {% else %}
+                <p>No image available for {{ product.name }}</p>
+            {% endif %}
             {{ product.name }}
         </a>
     </li>
+    {% endfor %}
 </ul>
-{% endfor %}
 {% endblock %}
